@@ -8,7 +8,7 @@ import time
 
 
 driver = webdriver.Chrome()
-driver = uc.Chrome()
+# driver = uc.Chrome()
 #going to messenger website
 driver.get("https://www.messenger.com")
 
@@ -50,7 +50,7 @@ contacts = [First_contact,Second_contact,Third_contact]
 search_input  = driver.find_element(By.CSS_SELECTOR, 'input[type="search"]') 
 
 #choose the second parameter in the contact list
-search_input.send_keys(contacts[1])
+search_input.send_keys(contacts[0])
 
 
 time.sleep(2)
@@ -58,12 +58,12 @@ time.sleep(2)
 
 
 # Click  first contact 
-# click_first_contact = driver.find_element(By.CSS_SELECTOR, 'li[id="100004055240717"]')
-# click_first_contact.click()
+click_first_contact = driver.find_element(By.CSS_SELECTOR, 'li[id="100004055240717"]')
+click_first_contact.click()
 
 # Click second contact 
-click_second_contact = driver.find_element(By.CSS_SELECTOR, 'li[id="100000292407952"]')
-click_second_contact.click()
+# click_second_contact = driver.find_element(By.CSS_SELECTOR, 'li[id="100000292407952"]')
+# click_second_contact.click()
 
 # Click third contact 
 # click_third_contact = driver.find_element(By.CSS_SELECTOR, 'li[id="1535917644"]')
@@ -89,7 +89,7 @@ out.click()
 
 
 # logout
-logout = driver.find_element(By.CSS_SELECTOR, 'div[role="menuitem"]')
+logout = driver.find_elements(By.CSS_SELECTOR, "div[role='menuitem']")[-1]
 logout.click()
 time.sleep(8)
 
