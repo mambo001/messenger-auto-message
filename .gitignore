@@ -1,5 +1,3 @@
-#ignoring env
-.env
 test.py
 *.local
 # Logs
