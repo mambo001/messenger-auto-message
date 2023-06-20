@@ -64,9 +64,14 @@ search_input.send_keys(contacts[0])
 time.sleep(2)
 
 
-
-# Click  first contact 
-click_first_contact = driver.find_element(By.CSS_SELECTOR, 'li[id="100004055240717"]')
+# Find all 'a' tags that matches the xpath
+# xpath = finds all 'a' tags that contains 'href' attribute
+# which follows the pattern of 'https://www.messenger.com/t/'
+# user ids. And select only the first result using
+# xpath indexing = [1].
+# Effective clicks the first matching contact in the list
+click_first_contact = driver.find_element(
+    By.XPATH, '(//*[number(@id) = number(@id)]/div/a)[1]')
 click_first_contact.click()
 
 # Click second contact 
